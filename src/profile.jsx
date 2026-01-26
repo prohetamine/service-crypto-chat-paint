@@ -12,7 +12,7 @@ import config from './crypto/config.js'
 const Body = styled(motion.div)`
   position: absolute;
   right: 15px;
-  bottom: 300px;
+  bottom: 335px;
   background: #21ff4a1c;
   border: 1px solid #32ff6fd4;
   border-radius: 4px;

@@ -13,7 +13,7 @@ import MiniCanvas from './mini-canvas.jsx'
 
 const Body = styled(motion.div)`
   position: absolute;
-  bottom: 15px;
+  bottom: 55px;
   right: 15px;
   background: #21ff4a1c;
   border: 1px solid #32ff6fd4;

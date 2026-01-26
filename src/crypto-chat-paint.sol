@@ -122,37 +122,37 @@ contract Text {
 
 contract Main is Text, Authors, Chat, Canvas {
     address internal owner;
-    address internal allowedToken;
+    address internal token;
 
-    constructor(address _allowedToken) {
+    constructor(address _token) {
         owner = msg.sender;
-        allowedToken = _allowedToken;
+        token = _token;
     }
 
-    function addMessage(address token, uint256 amount, string calldata _message) public {
+    function addMessage(string calldata _message) public {
         require(bytes(_message).length <= 2500, "Large message");
-        require(amount == 3, "You can't pay with a larger amount");
-        require(token == allowedToken, "Accepts payment in official token only");
 
         address sender = msg.sender;
         require(bytes(_message).length != 0, "Message is empty");
         require(bytes(getAuthorByAddress(sender)).length != 0, "Author is not name");
-        _addMessage(_message, sender);
 
         require(
-            IERC20(token).transferFrom(sender, owner, amount),
+            IERC20(token).transferFrom(sender, owner, 3),
             "Payment failed"
         );
+        _addMessage(_message, sender);
     }
 
-    function addDraw(address token, uint256 amount, string calldata draw) public {
+    function addDraw(string calldata draw) public {
         require(bytes(draw).length <= 2500, "Large draw data");
-        require(amount == 5, "You can't pay with a larger amount");
-        require(token == allowedToken, "Accepts payment in official token only");
-
+        
         address sender = msg.sender;
         require(bytes(draw).length != 0, "Draw is empty");
         require(bytes(getAuthorByAddress(sender)).length != 0, "Author is not name");
+        require(
+            IERC20(token).transferFrom(sender, owner, 5),
+            "Payment failed"
+        );
         uint256 index = _addDraw(draw, sender);
         string memory message = string.concat(
             "Draw in canvas ",
@@ -161,24 +161,16 @@ contract Main is Text, Authors, Chat, Canvas {
             uintToString(index)
         );
         _addMessage(message, sender);   
-
-        require(
-            IERC20(token).transferFrom(sender, owner, amount),
-            "Payment failed"
-        );
     }
 
-    function setAuthorname(address token, uint256 amount, string calldata name) public {
+    function setAuthorname(string calldata name) public {
         require(bytes(name).length <= 40, "Large name");
-        require(amount == 10, "You can't pay with a larger amount");
-        require(token == allowedToken, "Accepts payment in official token only");
         address sender = msg.sender;
-        _setAuthorname(name, sender);
-
         require(
-            IERC20(token).transferFrom(sender, owner, amount),
+            IERC20(token).transferFrom(sender, owner, 10),
             "Payment failed"
         );
+        _setAuthorname(name, sender);
     }
 
     function getMyAddress() public view returns (address) {
