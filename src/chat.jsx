@@ -44,7 +44,7 @@ const Message = styled.div`
 `
 
 const Author = styled.span`
-  color: #666;
+  color: #666; 
   font-size: 12px;
   font-weight: 700;
   font-family: "SUSE Mono", sans-serif;
@@ -270,7 +270,7 @@ const Chat = () => {
       <MessagesOverflow ref={refChat}>
         {
           messages.map(message => {
-            const color = `hsl(${parseInt(message.authorAddress.slice(2),16)%360},70%,50%)`;
+            const color = `hsl(${100+parseInt(message.authorAddress.slice(2),16)%360},30%,50%)`;
 
             let $address = null
               , index = null
