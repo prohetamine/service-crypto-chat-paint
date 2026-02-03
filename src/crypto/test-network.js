@@ -1,8 +1,5 @@
 import { defineChain } from '@reown/appkit/networks'
 
-
-import { defineChain } from '@reown/appkit/networks'
-
 const ip = '192.168.50.143'
 
 export default [
