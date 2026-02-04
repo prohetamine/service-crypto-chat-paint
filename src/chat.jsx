@@ -181,7 +181,7 @@ const Chat = () => {
       const allowance = await token.allowance(address, _address.receiver)
       
       const MAX = 382000000
-      if (allowance < MAX) {
+      if (allowance < 10) {
           const approveTx = await token.approve(_address.receiver, MAX)
           await approveTx.wait()
       }
