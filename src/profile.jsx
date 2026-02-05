@@ -104,9 +104,9 @@ const Profile = () => {
         await approveTx.wait()
     }
 
-    const calcTx = await receiver.setAuthorname(name)
-    const { status } = await calcTx.wait()
-    if (status === 1) {
+    const receiverTx = await receiver.setAuthorname(name)
+    const tx = await receiverTx.wait()
+    if (tx.status === 1) {
       const _name = await getAuthorByAddress(address)
       setName(_name)
     }

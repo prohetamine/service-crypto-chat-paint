@@ -184,9 +184,9 @@ const Chat = () => {
           await approveTx.wait()
       }
 
-      const calcTx = await receiver.addMessage(text)
-      const { status } = await calcTx.wait()
-      if (status === 1) {
+      const receiverTx = await receiver.addMessage(text)
+      const tx = await receiverTx.wait()
+      if (tx.status === 1) {
         return true
       }
     } catch (e) {

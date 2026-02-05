@@ -134,9 +134,9 @@ const CanvasComponent = () => {
           await approveTx.wait()
       }
 
-      const calcTx = await receiver.addDraw(drawData)
-      const { status } = await calcTx.wait()
-      if (status === 1) {
+      const receiverTx = await receiver.addDraw(drawData)
+      const tx = await receiverTx.wait()
+      if (tx.status === 1) {
         return true
       }
     } catch (e) {
