@@ -1,0 +1,131 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #444;
+  background-size: cover;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.link, .link:active {
+  color: #02e947d4;
+}
+
+.link:hover {
+  color: #32ff6fd4;
+}
+
+/* NORMAL */
+@font-face {
+  font-family: 'SUSE Mono';
+  src: url('./assets/fonts/SUSEMono-Thin.ttf') format('truetype');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'SUSE Mono';
+  src: url('./assets/fonts/SUSEMono-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'SUSE Mono';
+  src: url('./assets/fonts/SUSEMono-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'SUSE Mono';
+  src: url('./assets/fonts/SUSEMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'SUSE Mono';
+  src: url('./assets/fonts/SUSEMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'SUSE Mono';
+  src: url('./assets/fonts/SUSEMono-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'SUSE Mono';
+  src: url('./assets/fonts/SUSEMono-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'SUSE Mono';
+  src: url('./assets/fonts/SUSEMono-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+}
+
+/* ITALIC */
+@font-face {
+  font-family: 'SUSE Mono';
+  src: url('./assets/fonts/SUSEMono-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SUSE Mono';
+  src: url('./assets/fonts/SUSEMono-ExtraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SUSE Mono';
+  src: url('./assets/fonts/SUSEMono-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SUSE Mono';
+  src: url('./assets/fonts/SUSEMono-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SUSE Mono';
+  src: url('./assets/fonts/SUSEMono-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SUSE Mono';
+  src: url('./assets/fonts/SUSEMono-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SUSE Mono';
+  src: url('./assets/fonts/SUSEMono-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SUSE Mono';
+  src: url('./assets/fonts/SUSEMono-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
