@@ -88,8 +88,8 @@ const App = () => {
             cursor: 'grab'
           }}
           style={{ cursor: 'pointer' }}
-          onClick={() => setTimeout(() => window.open('https://app.uniswap.org/explore/tokens/bnb/0xd566886eb93500e2ba464bd48c8d5a2556569253?inputCurrency=NATIVE', '_blank'), 100)}
-        >Uniswap</Link>
+          onClick={() => setTimeout(() => window.open('https://www.sushi.com/bsc/swap?token0=NATIVE&token1=0xd566886eb93500e2ba464bd48c8d5a2556569253&swapAmount=', '_blank'), 100)}
+        >Sushi Swap</Link>
         <Link 
           className='link'
           drag

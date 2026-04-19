@@ -21,7 +21,7 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "sleep-promise": "^9.1.0",
-    "stas-pay": "^0.1.223",
+    "stas-pay": "^0.1.231",
     "styled-components": "^6.3.5",
     "viem": "^2.44.1",
     "wagmi": "^3.3.1"
